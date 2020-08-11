@@ -1,0 +1,14 @@
+{
+    "files.exclude": {
+        "**/DebugConfig": true,
+        "**/Listings": true,
+        "**/Objects": true,
+        "**/RTE": true,
+        "**/*.uvoptx": true,
+        "**/*.uvprojx": true,
+        "**/*.uvguix.admin": true
+    },
+    "files.associations": {
+        "PID.C": "cpp"
+    }
+}

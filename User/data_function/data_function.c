@@ -14,47 +14,47 @@ int ultra_distance=0;  //存储后面超声传感器测得的距离值
 
 float encoder_data_left(void)
 {
-	if(Flag_milemeter==1)
-	{
-		Flag_milemeter=0;			
-		Sum_L_Motor+=Milemeter_L_Motor;   //溢出情况需要进一步考虑处理
+    if(Flag_milemeter==1)
+    {
+        Flag_milemeter=0;
+        Sum_L_Motor+=Milemeter_L_Motor;   //溢出情况需要进一步考虑处理
   }
-	return Sum_L_Motor;
+    return Sum_L_Motor;
 }
 
 float encoder_data_right(void)
 {
-	if(Flag_milemeter==1)
-	{
-		Flag_milemeter=0;
-		Sum_R_Motor+=Milemeter_R_Motor;		
+    if(Flag_milemeter==1)
+    {
+        Flag_milemeter=0;
+        Sum_R_Motor+=Milemeter_R_Motor;
   }
-	return Sum_R_Motor;
+    return Sum_R_Motor;
 }
 
 // void ultrasound_data_front(isOnoff)
 //{
-//	if(isOnoff==true)
-//	{
-//		int k=0;
-//		for(k=0;k<6;k++)
-//		{
-//			Ultra_dis[k]=	UltrasonicWave_StartMeasure(Ulta_number);
-//			Ulta_number++;
-//		}
-//		k=0;
-//		Ulta_number=0;
-//		//return Ultra_dis;
-//		//return Ultra_dis[re_number];
-//	}
+//    if(isOnoff==true)
+//    {
+//        int k=0;
+//        for(k=0;k<6;k++)
+//        {
+//            Ultra_dis[k]=    UltrasonicWave_StartMeasure(Ulta_number);
+//            Ulta_number++;
+//        }
+//        k=0;
+//        Ulta_number=0;
+//        //return Ultra_dis;
+//        //return Ultra_dis[re_number];
+//    }
 
 //}
 
 int ultrasound_data_back()
 {
 
-	ultra_distance=UltrasonicWave_Measure_back();
-	return ultra_distance;
+    ultra_distance=UltrasonicWave_Measure_back();
+    return ultra_distance;
 }
 
 

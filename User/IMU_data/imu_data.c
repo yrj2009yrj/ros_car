@@ -8,18 +8,18 @@ static unsigned char Temp[11];   //Êı¾İ»º´æ
 
 void imu_data(void)              //ÍÓÂİÒÇµÄÓÅÏÈ¼¶Òª¸ßÓÚ¼ÆËãÂö³åµÄÓÅÏÈ¼¶£»¾²Ö¹µÄÊ±ºòÍÓÂİÒÇµÄ×¼È·¶È´óÓÚÔË¶¯Ê±£¬ÊÇÒòÎª¶¶¶¯
 {
-//	 if(once_delay)
-//	 {
-//		 delay_ms(200);
-//		 once_delay=0;
-//	 }
-	
-	 if(sign)
-   {  
+//     if(once_delay)
+//     {
+//         delay_ms(200);
+//         once_delay=0;
+//     }
+
+     if(sign)
+   {
       memcpy(Temp,Re_buf,11);
       sign=0;
       if(Re_buf[0]==0x55)       //¼ì²éÖ¡Í·
-      {  
+      {
         switch(Re_buf[1])
         {
            case 0x51: //±êÊ¶Õâ¸ö°üÊÇ¼ÓËÙ¶È°ü
@@ -44,10 +44,10 @@ void imu_data(void)              //ÍÓÂİÒÇµÄÓÅÏÈ¼¶Òª¸ßÓÚ¼ÆËãÂö³åµÄÓÅÏÈ¼¶£»¾²Ö¹µÄÊ
               break;
               default:  break;
         }
-			//printf("X½Ç¶È£º%.2f  Y½Ç¶È£º%.2f  Z½Ç¶È£º%.2f  XËÙ¶È£º%.2f  YËÙ¶È£º%.2f  ZËÙ¶È£º%.2f\r\n",angle[0],angle[1],angle[2],w[0],w[1],w[2]);
-			 //printf("%.2f %.2f %.2f\r\n",acc[0],acc[1],acc[2]);
-     }        
+            //printf("X½Ç¶È£º%.2f  Y½Ç¶È£º%.2f  Z½Ç¶È£º%.2f  XËÙ¶È£º%.2f  YËÙ¶È£º%.2f  ZËÙ¶È£º%.2f\r\n",angle[0],angle[1],angle[2],w[0],w[1],w[2]);
+             //printf("%.2f %.2f %.2f\r\n",acc[0],acc[1],acc[2]);
+     }
   }
 //  delay_ms(50);
-			
+
 }

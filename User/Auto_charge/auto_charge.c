@@ -14,113 +14,113 @@ int ultrasound_data_back(void);  //ºóÃæ³¬Éù²¨Êı¾İº¯ÊıÉùÃ÷£¬ÓÖ·µ»ØÖµµÃº¯ÊıĞèÒªµ÷Ó
 
 void auto_charge(void)
 {
-	  if(Flag_Ultra_charge)  //ÓÃ×÷×îºó³äµçµÄÍ£Ö¹Ìõ¼ş
-		{
-    	//	Ultra_charge=	ultrasound_data_back();
-			
-// 	    printf("%d\r\n",ultrasound_data_back());
-			
-			check[i]=Ultra_charge;
-			i--;
-			if(i==-1)
-			{	
-				i=2;
-				checkup[1]=check[1];
-				checkup[2]=check[2];
-				checkup[0]=check[0];
- //       Flag_Ultra_charge=0;				
-			}
-			
-		}
-		
-		if((checkup[0]<7)&&(checkup[1]<7)&&(checkup[2]<7)) //Á¬ĞøÈı¸öÊı¾İ¾ùĞ¡ÓÚ9mmÊ±£¬»úÆ÷ÈËÍ£Ö¹
-		{
-//			printf("tingzhi\r\n");
-			Set_carStop();
-			Red_flag_stop=0;       //»úÆ÷ÈËÍ£Ö¹±êÖ¾Î»  
-			Flag_Ultra_charge=0;
-		}
-		else
-		{
-			Red_flag_stop=1;
-			Flag_Ultra_charge=1;			
-		}
-		
-	  if(Red_flag_stop)  
-		{
+      if(Flag_Ultra_charge)  //ÓÃ×÷×îºó³äµçµÄÍ£Ö¹Ìõ¼ş
+        {
+        //    Ultra_charge=    ultrasound_data_back();
 
-			if(Red_Right&&Red_flag_rr)    //µ±ÓÒ²à´«¸ĞÆ÷½ÓÊÕµ½ĞÅºÅÊ±£¬ÖÃ1ÏàÓ¦±êÖ¾Î»
-			{	
-				Red_flag_r=1;
-			}
-			
-			if(Red_Left&&Red_flag_ll)   //µ±×ó²à´«¸ĞÆ÷½ÓÊÕµ½ĞÅºÅÊ±£¬ÖÃ1ÏàÓ¦±êÖ¾Î»
-			{
-				Red_flag_l=1;
-			}
-		
-			if(Red_flag_r||Red_flag_l)   //µ±×ó²àÓĞĞÅºÅ½ÓÊÕÊ±
-			{
-				 if(Red_flag_r&&Red_flag_l)     //´¦Àí×óÓÒÁ½²àÁ¬ĞøÓĞĞÅºÅ½ÓÊÕµÄÇé¿ö
-				 {
-					  if(Red_Right) 
-					  {
-						   Red_flag_l=0;
-					  }
-					  else 
-						Red_flag_r=0;		
-				 }
-			
-				 if(Red_flag_r)    //ÓÒ²à½ÓÊÕµ½ĞÅºÅºó£¬×ó×ª£¬µ±ºóÃæÈı¸ö½ÓÊÕÆ÷¾ùÓĞĞÅºÅÊ±Ö´ĞĞ
-				 {		
-					  Set_carRight(1000);
-					  if(Red_flag_r&&Red_Front_Middle&&Red_Front_Right&&Red_Front_Left)
-					  {	
-						   Red_flag_r=0;
-						   Red_flag_rr=0;
-						   Red_flag_ll=0;
-						   Set_carBack(1000);
-					  }
-											
-				 }
-				 else	          //·ñÔò£¬ÓÒ×ª£¬µ±ºóÃæÈı¸öÓĞĞÅºÅ½ÓÊÕÊ±Ö±ĞĞ
-				 {		
-					  Set_carLeft(1000);
-					  if(Red_flag_l&&Red_Front_Middle&&Red_Front_Left&&Red_Front_Right)
-					  {
-						   Red_flag_l=0;
-						   Red_flag_rr=0;
-						   Red_flag_ll=0;                         
-						   Set_carBack(1000);
-					  }		
-				 }
-			 }	
-			 else if((!Red_flag_rr)&&(!Red_flag_ll))
-			 {
-					if(Red_Front_Left&&Red_Front_Middle&&Red_Front_Right)
-					{
-							Set_carBack(1000);
-					}
-					if((!Red_Front_Left)&&Red_Front_Middle&&(!Red_Front_Right))
-					{
-							Set_carBack(1000);
-					}
-					if((!Red_Front_Left)&&Red_Front_Middle&&Red_Front_Right)
-					{						
-							Set_carRight(1000);
-					}
-					if(Red_Front_Left&&Red_Front_Middle&&(!Red_Front_Right))
-					{
-							Set_carLeft(1000);
-					}
-			 }
-			 else
-			 {
-				  Set_carFoward(1000);
-				 
-			 }
+//         printf("%d\r\n",ultrasound_data_back());
 
-		 }		
-		 else   
-				 Set_carStop();		
+            check[i]=Ultra_charge;
+            i--;
+            if(i==-1)
+            {
+                i=2;
+                checkup[1]=check[1];
+                checkup[2]=check[2];
+                checkup[0]=check[0];
+ //       Flag_Ultra_charge=0;
+            }
+
+        }
+
+        if((checkup[0]<7)&&(checkup[1]<7)&&(checkup[2]<7)) //Á¬ĞøÈı¸öÊı¾İ¾ùĞ¡ÓÚ9mmÊ±£¬»úÆ÷ÈËÍ£Ö¹
+        {
+//            printf("tingzhi\r\n");
+            Set_carStop();
+            Red_flag_stop=0;       //»úÆ÷ÈËÍ£Ö¹±êÖ¾Î»
+            Flag_Ultra_charge=0;
+        }
+        else
+        {
+            Red_flag_stop=1;
+            Flag_Ultra_charge=1;
+        }
+
+      if(Red_flag_stop)
+        {
+
+            if(Red_Right&&Red_flag_rr)    //µ±ÓÒ²à´«¸ĞÆ÷½ÓÊÕµ½ĞÅºÅÊ±£¬ÖÃ1ÏàÓ¦±êÖ¾Î»
+            {
+                Red_flag_r=1;
+            }
+
+            if(Red_Left&&Red_flag_ll)   //µ±×ó²à´«¸ĞÆ÷½ÓÊÕµ½ĞÅºÅÊ±£¬ÖÃ1ÏàÓ¦±êÖ¾Î»
+            {
+                Red_flag_l=1;
+            }
+
+            if(Red_flag_r||Red_flag_l)   //µ±×ó²àÓĞĞÅºÅ½ÓÊÕÊ±
+            {
+                 if(Red_flag_r&&Red_flag_l)     //´¦Àí×óÓÒÁ½²àÁ¬ĞøÓĞĞÅºÅ½ÓÊÕµÄÇé¿ö
+                 {
+                      if(Red_Right)
+                      {
+                           Red_flag_l=0;
+                      }
+                      else
+                        Red_flag_r=0;
+                 }
+
+                 if(Red_flag_r)    //ÓÒ²à½ÓÊÕµ½ĞÅºÅºó£¬×ó×ª£¬µ±ºóÃæÈı¸ö½ÓÊÕÆ÷¾ùÓĞĞÅºÅÊ±Ö´ĞĞ
+                 {
+                      Set_carRight(1000);
+                      if(Red_flag_r&&Red_Front_Middle&&Red_Front_Right&&Red_Front_Left)
+                      {
+                           Red_flag_r=0;
+                           Red_flag_rr=0;
+                           Red_flag_ll=0;
+                           Set_carBack(1000);
+                      }
+
+                 }
+                 else              //·ñÔò£¬ÓÒ×ª£¬µ±ºóÃæÈı¸öÓĞĞÅºÅ½ÓÊÕÊ±Ö±ĞĞ
+                 {
+                      Set_carLeft(1000);
+                      if(Red_flag_l&&Red_Front_Middle&&Red_Front_Left&&Red_Front_Right)
+                      {
+                           Red_flag_l=0;
+                           Red_flag_rr=0;
+                           Red_flag_ll=0;
+                           Set_carBack(1000);
+                      }
+                 }
+             }
+             else if((!Red_flag_rr)&&(!Red_flag_ll))
+             {
+                    if(Red_Front_Left&&Red_Front_Middle&&Red_Front_Right)
+                    {
+                            Set_carBack(1000);
+                    }
+                    if((!Red_Front_Left)&&Red_Front_Middle&&(!Red_Front_Right))
+                    {
+                            Set_carBack(1000);
+                    }
+                    if((!Red_Front_Left)&&Red_Front_Middle&&Red_Front_Right)
+                    {
+                            Set_carRight(1000);
+                    }
+                    if(Red_Front_Left&&Red_Front_Middle&&(!Red_Front_Right))
+                    {
+                            Set_carLeft(1000);
+                    }
+             }
+             else
+             {
+                  Set_carFoward(1000);
+
+             }
+
+         }
+         else
+                 Set_carStop();
 }

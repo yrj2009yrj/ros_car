@@ -1,11 +1,11 @@
 /*********************************************************************************************************
 *
 * File                : systick.c
-* Hardware Environment: 
+* Hardware Environment:
 * Build Environment   : RealView MDK-ARM  Version: 4.32
 * Version             : V1.0
 * By                  : mao
-* Help Web			  : http://fantin.taobao.com/
+* Help Web              : http://fantin.taobao.com/
 *
 *
 *********************************************************************************************************/
@@ -14,14 +14,14 @@
 #include "systick.h"
 #include "core_cm3.h"
 
-/* Private variables ---------------------------------------------------------*/	 
+/* Private variables ---------------------------------------------------------*/
 static __IO uint32_t TimingDelay;
 
 void Delay_Init(void)
 {
   if (SysTick_Config(SystemCoreClock / 1000))
-  { 
-    /* Capture error */ 
+  {
+    /* Capture error */
     while (1);
   }
 }
@@ -32,7 +32,7 @@ void Delay_Init(void)
   * @retval None
   */
 void Delay(__IO uint32_t nTime)
-{ 
+{
   TimingDelay = nTime;
 
   while(TimingDelay != 0);
@@ -46,7 +46,7 @@ void Delay(__IO uint32_t nTime)
 void TimingDelay_Decrement(void)
 {
   if (TimingDelay != 0x00)
-  { 
+  {
     TimingDelay--;
   }
 }
@@ -60,8 +60,8 @@ void TimingDelay_Decrement(void)
 *******************************************************************************/
 //void delay_us(u16 time)
 //{
-//	time=time*8;  
-//	while(time--);
+//    time=time*8;
+//    while(time--);
 //}
 
 /*******************************************************************************
@@ -75,7 +75,7 @@ void TimingDelay_Decrement(void)
 //{
 //  for (; nCount != 0; nCount--)
 //  {
-//	 delay_us(1000);
+//     delay_us(1000);
 //  }
 //}
 

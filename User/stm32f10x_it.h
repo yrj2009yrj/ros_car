@@ -3,7 +3,7 @@
 
 #ifdef __cplusplus
  extern "C" {
-#endif 
+#endif
 
 #include "stm32f10x.h"
 #include <stdio.h>
@@ -11,13 +11,13 @@
 #include "contact.h"
 #include "string.h"
 #include "delay.h"
-	 
-#define USART_REC_LEN  			200  	//定义最大接收字节数 200
+
+#define USART_REC_LEN              200      //定义最大接收字节数 200
 
 void USART1_IRQHandler(void);//串口中断函数
 void TIM5_IRQHandler(void);//速度计算定时器中断函数
 void TIM1_UP_IRQHandler(void);//里程计发布定时器中断函数
-    
+
 #ifdef __cplusplus
 }
 #endif

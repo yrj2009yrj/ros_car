@@ -1,19 +1,19 @@
 /*********************************************************************************************************
 *
 * File                : systick.h
-* Hardware Environment: 
+* Hardware Environment:
 * Build Environment   : RealView MDK-ARM  Version: 4.32
 * Version             : V1.0
 * By                  : mao
-* Help Web			  : http://fantin.taobao.com/
+* Help Web              : http://fantin.taobao.com/
 *
 *
 *********************************************************************************************************/
 
 #ifndef __SYSTICK_H
-#define __SYSTICK_H 
+#define __SYSTICK_H
 
-/* Includes ------------------------------------------------------------------*/	   
+/* Includes ------------------------------------------------------------------*/
 #include "stm32f10x.h"
 
 //#define bool unsigned char
